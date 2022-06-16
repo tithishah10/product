@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb : FormBuilder,
     private authService : AuthServiceService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +33,7 @@ export class LoginComponent implements OnInit {
            if(data) {
             this.router.navigate(['/product']);
            }else{
-            alert("Invalid username and password")
+            this.toastr.warning('Invalid username and password');
             this.loginForm.reset()
            } 
       });
