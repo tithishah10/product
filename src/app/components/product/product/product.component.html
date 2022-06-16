@@ -1,12 +1,13 @@
 <!-- <p>product works!</p> -->
 <html>
+    <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search here..." autofocus>
     <table border="2">
         <tr>
             <td>Product name</td>
             <td>SKU</td>
             <td>Price</td>
         </tr>
-        <tr *ngFor="let productlist of productlist">
+        <tr *ngFor="let productlist of productlist | search: searchText">
             <td>{{productlist.name}}</td>
             <td>{{productlist.pantone_value}}</td>
             <td>{{productlist.year}}</td>

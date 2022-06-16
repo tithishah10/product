@@ -10,10 +10,10 @@ export class ProductComponent implements OnInit {
 
   constructor(private productservice: ProductService) { }
   productlist : object
+  searchText = '';
   ngOnInit(): void {
     this.productservice.productList().subscribe(data => {
       this.productlist = data.data
-      console.log(this.productlist)
     })
   }
 

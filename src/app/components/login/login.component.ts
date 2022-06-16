@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this.authService.login(this.loginForm.value.username, this.loginForm.value.pwd)
          .subscribe( data => { 
-            console.log("Is Login Success: " + data); 
            if(data) {
             this.router.navigate(['/product']);
            }else{

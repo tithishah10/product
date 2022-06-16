@@ -12,10 +12,11 @@ import { ToastrModule } from 'ngx-toastr'
 import { ProductService } from './services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
