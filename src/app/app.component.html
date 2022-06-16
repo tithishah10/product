@@ -1,2 +1,5 @@
-
+<button *ngIf="isUserLoggedIn; else isLogOut" (click)="logout()">Logout</button>
+<ng-template #isLogOut>
+    <a class="nav-link" routerLink="/login">Login</a>
+</ng-template>
 <router-outlet></router-outlet>

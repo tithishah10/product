@@ -1,0 +1,24 @@
+<!-- <p>login works!</p> -->
+<html>
+    <head></head>
+    <div><b>Login</b></div>
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+        <div>
+            <label for="">Username</label>
+            <input type="text" formControlName="username" autofocus>
+            <div *ngIf="f1.username.invalid && f1.username.touched">
+                <small *ngIf="f1.username.errors?.required" style="color:red">Username is required</small>
+            </div>
+        </div>
+        <div>
+            <label for="">Password</label>
+            <input type="password" formControlName="pwd">
+            <div *ngIf="f1.pwd.invalid && f1.pwd.touched">
+                <small *ngIf="f1.pwd.errors?.required" style="color:red">Password is required</small>
+            </div>
+        </div>
+        <div>
+            <button [disabled]="!loginForm.valid">Login</button>
+        </div>
+    </form>
+</html>
