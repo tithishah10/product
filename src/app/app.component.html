@@ -1,2 +1,8 @@
-
+<div>
+    <button *ngIf="isUserLoggedIn; else isLogOut" (click)="logout()"><a>Logout</a></button>
+    <ng-template #isLogOut>
+        <button><a class="nav-link" routerLink="/login">Login</a></button>
+    </ng-template>
+</div>
+<hr>
 <router-outlet></router-outlet>
